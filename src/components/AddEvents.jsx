@@ -18,9 +18,9 @@ import { Header } from "./Header";
 
 // loader function to get users and categories data for the form
 export const loader = async () => {
-  const users = await (await fetch("http://localhost:3000/users")).json();
+  const users = await (await fetch("https://my-json-server.typicode.com/alexandrahendriks/Deploying_REACT_Advanced_project/users")).json();
   const categories = await (
-    await fetch("http://localhost:3000/categories")
+    await fetch("https://my-json-server.typicode.com/alexandrahendriks/Deploying_REACT_Advanced_project/categories")
   ).json();
 
   return [users, categories];
@@ -46,7 +46,7 @@ export const AddEvents = () => {
   // onSubmit POST request to the backend
   const onSubmit = async (data) => {
     setIsPending(true);
-    const response = await fetch("http://localhost:3000/events", {
+    const response = await fetch("https://my-json-server.typicode.com/alexandrahendriks/Deploying_REACT_Advanced_project/events", {
       method: "POST",
       body: JSON.stringify({
         createdBy: Number(data.createdBy),

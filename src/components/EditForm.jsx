@@ -11,12 +11,12 @@ import { CheckBox } from "./CheckBox";
 //Data loader
 export const loader = async ({ params }) => {
   const event = await (
-    await fetch(`http://localhost:3000/events/${params.eventId}`)
+    await fetch(`https://my-json-server.typicode.com/alexandrahendriks/Deploying_REACT_Advanced_project/events/${params.eventId}`)
   ).json();
   const categories = await (
-    await fetch("http://localhost:3000/categories")
+    await fetch("https://my-json-server.typicode.com/alexandrahendriks/Deploying_REACT_Advanced_project/categories")
   ).json();
-  const users = await (await fetch("http://localhost:3000/users")).json();
+  const users = await (await fetch("https://my-json-server.typicode.com/alexandrahendriks/Deploying_REACT_Advanced_project/users")).json();
 
   return [event, categories, users];
 };
@@ -43,7 +43,7 @@ export const EditForm = () => {
     setIsPending(true);
     console.log(userEvent);
     const response = await fetch(
-      `http://localhost:3000/events/` + userEvent.id,
+      `https://my-json-server.typicode.com/alexandrahendriks/Deploying_REACT_Advanced_project/events/` + userEvent.id,
       {
         method: "PUT",
         headers: { "Content-type": "application/json" },

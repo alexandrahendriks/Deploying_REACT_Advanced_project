@@ -6,11 +6,11 @@ import { Header } from "../components/Header";
 
 //Data Loader
 export const loader = async () => {
-  const event = await (await fetch(`http://localhost:3000/events/`)).json();
+  const event = await (await fetch(`https://my-json-server.typicode.com/alexandrahendriks/Deploying_REACT_Advanced_project/events/`)).json();
   const categories = await (
-    await fetch("http://localhost:3000/categories")
+    await fetch("https://my-json-server.typicode.com/alexandrahendriks/Deploying_REACT_Advanced_project/categories/")
   ).json();
-  const users = await (await fetch("http://localhost:3000/users")).json();
+  const users = await (await fetch("https://my-json-server.typicode.com/alexandrahendriks/Deploying_REACT_Advanced_project/users/")).json();
 
   return [event, categories, users];
 };
