@@ -82,9 +82,9 @@ export const EventPage = () => {
             display="flex"
             flexDirection={{ base: "column", md: "row" }}
             justifyContent={"center"}
+            alignContent = {"center"}
             columnGap={{ md: 5 }}
             mt="50px"
-            ml={{ lg: "150px", xl: "230px" }}
           >
             <Link to={`/event/${event.id}/editevent`}>
               <Buttons title={"Edit event"}>Edit event</Buttons>
